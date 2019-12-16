@@ -3,15 +3,15 @@ pipeline {
     tools {nodejs "nodejs"}
     	
     environment {
-		scannerHome = tool 'SonarQubeScanner'
+		scannerHome = tool 'Sonnar-Scanner'
     }
 
     stages { 
-    	/*stage('prep') {
+    	stage('prep') {
     		steps{
         		git url: 'http://172.29.113.80/reingenieria-cotizadores/api-vehicular-brokers.git'                
 	        }		
-    	} */  
+    	}   
         stage('Install dependencies') {
             steps {
                 //sh 'rm package-lock.json'
@@ -23,7 +23,7 @@ pipeline {
         	steps{
         		withSonarQubeEnv('SonarQubeServer') {
                         //sh "${scannerHome}/bin/sonar-scanner -e  -Dsonar.host.url=http://172.29.113.232:10003 -Dsonar.login=${sonarLogin}  -Dsonar.projectName=api-vida-project-test -Dsonar.projectVersion=${env.BUILD_NUMBER} -Dsonar.projectKey=api-vida-project-test -Dsonar.sources=src"
-                    sh "${scannerHome}/bin/sonar-scanner"
+                    sh "${scannerHome}/bin/sonar-runner -D sonar.login=jpaez-paez -D sonar.password=jorge-paez"
                 }
         	}
         }                       
