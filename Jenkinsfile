@@ -16,8 +16,8 @@ pipeline {
             }
         } 
         stage('SonarTest'){
+		def scannerHome = tool 'Sonnar-Scanner';
         	steps{
-			def scannerHome = tool 'Sonnar-Scanner';
         		withSonarQubeEnv('SonarQubeServer') {
                         //sh "${scannerHome}/bin/sonar-scanner -e  -Dsonar.host.url=http://172.29.113.232:10003 -Dsonar.login=${sonarLogin}  -Dsonar.projectName=api-vida-project-test -Dsonar.projectVersion=${env.BUILD_NUMBER} -Dsonar.projectKey=api-vida-project-test -Dsonar.sources=src"
 				sh "${scannerHome}/bin/sonar-runner -D sonar.login=jpaez-paez -D sonar.password=jorge-paez"
