@@ -3,7 +3,7 @@ pipeline {
     tools {nodejs "nodejs"}
     
     environment {
-		scannerHome = tool 'Sonnar-Scanner'
+		scannerHome = tool 'Sonar-Scanner'
     }
     
     stages { 
