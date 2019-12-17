@@ -17,7 +17,7 @@ pipeline {
                 //sh 'rm package-lock.json'
 		    sh 'npm install'
 		    sh 'npm install newman'
-		    sh 'npm install — dev jest-junit'
+		    sh 'npm install jest-junit'
             }
         } 
         stage('SonarTest'){
