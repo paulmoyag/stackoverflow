@@ -14,9 +14,10 @@ pipeline {
     	}   
         stage('Install dependencies') {
             steps {
-                //sh 'rm package-lock.json'
-    		    sh 'npm install'
-    		    sh 'npm install newman'
+                   //sh 'rm package-lock.json'
+    		   sh 'npm install'
+    		   sh 'npm install newman'
+		   sh 'npm install — dev jest-junit'
             }
         } 
         stage('SonarTest'){
