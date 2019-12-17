@@ -15,13 +15,14 @@ pipeline {
         stage('Install dependencies') {
             steps {
                 //sh 'rm package-lock.json'
-    		    sh 'npm install'
-    		    sh 'npm install newman'
+		    sh 'npm install'
+		    sh 'npm install newman'
+		    sh 'npm install — dev jest-junit'
             }
         } 
         stage('SonarTest'){
 	    steps{
-		echo '1'
+		    echo '1'
 		//withSonarQubeEnv('SonarQubeServer') {
 			//sh "${scannerHome}/bin/sonar-scanner -e  -Dsonar.host.url=http://172.29.113.232:10003 -Dsonar.login=${sonarLogin}  -Dsonar.projectName=api-vida-project-test -Dsonar.projectVersion=${env.BUILD_NUMBER} -Dsonar.projectKey=api-vida-project-test -Dsonar.sources=src"
 		//	sh """${scannerHome}/bin/sonar-runner -D sonar.login=jpaez-paez -D sonar.password=jorge-paez"""
