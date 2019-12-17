@@ -7,11 +7,11 @@ pipeline {
     }
     
     stages { 
-    	stage('prep') {
+    	/*stage('prep') {
     		steps{
         		git url: 'http://172.29.113.80/reingenieria-cotizadores/api-vehicular-brokers.git'                
 	        }		
-    	}   
+    	} */  
         stage('Install dependencies') {
             steps {
                 //sh 'rm package-lock.json'
